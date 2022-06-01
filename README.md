@@ -5,7 +5,7 @@
 2021-2022  
 [DUT informatique 2 e année Illkirch-Graffenstaden](https://iutrs.unistra.fr/formations/dut-diplome-universitaire-de-technologie/dut-informatique)  
 Approfondissement Java, C, apprentissage du PHP  
-Projet tutoré effectué durant le deuxième bimestre  
+Projet tutoré effectué durant le premier semestre  
 
 2020-2021  
 [DUT informatique 1 er année Illkirch-Graffenstaden](https://iutrs.unistra.fr/formations/dut-diplome-universitaire-de-technologie/dut-informatique)  
