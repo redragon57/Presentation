@@ -1,0 +1,47 @@
+
+R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[Sauvegarde de la session précédente restaurée]
+
+> library(ggplot2)
+> library(cowplot)
+> myData <- read.csv("result_ex7.csv", header=TRUE, sep="\t")
+> pm <- ggplot(myData, aes(number, eat, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="eat") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_eat.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+There were 15 warnings (use warnings() to see them)
+> 
+> pa <- ggplot(myData, aes(number, carrot, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="carrot") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_carrot.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+There were 15 warnings (use warnings() to see them)
+> 
+> pr <- ggplot(myData, aes(number, purify, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="purify") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_purify.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+There were 15 warnings (use warnings() to see them)
+> 
+> p <- plot_grid(pm, pa, pr, labels = c("eat", "carrot", "purify"), ncol = 2, nrow = 2)
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+There were 45 warnings (use warnings() to see them)
+> ggsave("result_ex7.png", width = 14, height = 6, dpi = 400)
+> 
+> proc.time()
+utilisateur     système      écoulé 
+      4.792       0.195       5.016 

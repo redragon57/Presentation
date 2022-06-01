@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://theme/theme.tres" type="Theme" id=1]
+[ext_resource path="res://resources/ui/Explication.cs" type="Script" id=2]
+
+[node name="RenovAdmin" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu_Demarrage" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -237.5
+margin_top = -72.5
+margin_right = 237.5
+margin_bottom = 72.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="explication" type="Label" parent="Menu_Demarrage"]
+margin_left = 5.0
+margin_top = 14.0
+margin_right = 467.0
+margin_bottom = 109.0
+theme = ExtResource( 1 )
+text = "Bonjour monsieur l'architecte,
+Je vous informe que la mairie a ${choix} la renovation.
+
+Bonne journée !"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ok" type="Button" parent="Menu_Demarrage"]
+margin_left = 170.0
+margin_top = 113.0
+margin_right = 270.0
+margin_bottom = 129.0
+theme = ExtResource( 1 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}

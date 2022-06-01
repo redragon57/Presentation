@@ -1,0 +1,43 @@
+
+R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[Sauvegarde de la session précédente restaurée]
+
+> library(ggplot2)
+> library(cowplot)
+> myData <- read.csv("result.csv", header=TRUE, sep="\t")
+> pm <- ggplot(myData, aes(number, min, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="Minimum") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_min.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+> 
+> pa <- ggplot(myData, aes(number, add, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="Add") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_add.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+> 
+> pr <- ggplot(myData, aes(number, remove, color=type)) + labs(x="Taille de la structure",y="Temps en milliseconde",title="Remove") + geom_point() + geom_smooth(method="loess", se = FALSE)
+> ggsave("result_remove.png", width = 7, height = 3, dpi = 300)
+`geom_smooth()` using formula 'y ~ x'
+> 
+> p <- plot_grid(pm, pa, pr, labels = c("min", "add", "remove"), ncol = 2, nrow = 2)
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+> ggsave("result.png", width = 14, height = 6, dpi = 400)
+> 
+> proc.time()
+utilisateur     système      écoulé 
+      4.809       0.160       5.046 

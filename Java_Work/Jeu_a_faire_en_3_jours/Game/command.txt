@@ -1,0 +1,1 @@
+jar cvfm Game.jar MANIFEST.MF -C classes/ . resources

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/September _ Eurobeat Remix.mp3-bd56aaba188109057e63861ac8a64eaa.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/September _ Eurobeat Remix.mp3"
+dest_files=[ "res://.import/September _ Eurobeat Remix.mp3-bd56aaba188109057e63861ac8a64eaa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

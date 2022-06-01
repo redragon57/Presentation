@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Starbound OST - Arctic Constellation 1.mp3-3c49ca6814999b29ab995c5462c9c0b1.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/Starbound OST - Arctic Constellation 1.mp3"
+dest_files=[ "res://.import/Starbound OST - Arctic Constellation 1.mp3-3c49ca6814999b29ab995c5462c9c0b1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

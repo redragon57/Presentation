@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://resources/fonts/disposabledroid-bb/DisposableDroidBB.ttf"
+
+[resource]
+size = 20
+use_mipmaps = true
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = SubResource( 7 )
