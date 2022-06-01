@@ -25,7 +25,7 @@ Apprentissage Javascript, C# et SQL
 
 ### COMPETENCES
 
-Langage maîtrisé : [C++](https://raw.githubusercontent.com/redragon57/Zimproov/main/test%20docking.mp4), [C](./C++_Work), [C#](./C#_Work), [HTML, CSS, JavaScript](./WebReact_Work), [GDScript](./Projet_Godot), [Java](./Java_Work), [Python](./Python_Work), Assembleur, SQL, PHP
+Langage maîtrisé : [C++](https://raw.githubusercontent.com/redragon57/Zimproov/main/test%20docking.mp4), [C](./C++_Work), [C#](./C#_Work), [HTML, CSS, JavaScript](./WebReact_Work), [GDScript](./Projet_Godot), [Java](./Java_Work), [Python](./Python_Work), [SQL, PHP](./PHP_Work), Assembleur
 Logiciel maîtrisé : Suite LibreOffice, Visual Studio, IntelliJ, Scratch, [Godot](./Projet_Godot), Unity, [Cinema 4d](https://raw.githubusercontent.com/redragon57/Zimproov/main/My%20modelisation%20work%20presentation.mp4), Jsplacement, Photofiltre, Audacity, Shotcut
 Langue : Anglais
 
