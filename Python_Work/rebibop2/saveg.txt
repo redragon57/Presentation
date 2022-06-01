@@ -1,0 +1,276 @@
+#importation
+import pygame
+import math
+from pygame.locals import *
+from random import *
+import time
+import threading
+from modulecoord import *
+from world1 import *
+pygame.init()
+
+pygame.display.set_caption('KNIGHT OF JUSTICE')                 #titre apli
+fenetre = pygame.display.set_mode((1920,752), RESIZABLE)        #initiaisation fenetre
+pygame.key.set_repeat(200, 30)                                  #seuil de durée permettant une répétition birtuerlle de l'appui#   
+from constantes import *
+from classes import *
+fenetre.blit(fond, (0,0))
+pygame.display.flip()
+
+#propriété du personnage et condition
+while continuer:
+    x_perso += 20
+    fenetre.blit(fond, (0,0))
+    niveau = Niveau("n1")
+    niveau.creer()
+    niveau.affichage(fenetre)
+    texte = font.render(str(y_perso), 1, (255,255,255)) #indicateur
+    texte1 = font.render(str(x_perso), 1, (255,255,255))
+    texte2 = font.render(str(i), 1, (255,255,255))
+    texteui = font.render(str(ui), 1, (255,255,255))
+    for event in pygame.event.get():                    #déplacement et quitter
+        if event.type == QUIT:
+            continuer = 0
+        if event.type == KEYDOWN:                       #touche presser
+            if event.key == K_LEFT:
+                keydownl = 1
+                direction = -1
+            if event.key == K_RIGHT:
+                keydownr = 1
+                direction = 1
+            if event.key == K_UP:
+                keydownu = 1
+            if event.key == K_RETURN:
+                entree = int(input(""))
+            if event.key == K_r:
+                ralentissement = 1
+            if event.key == K_p:
+                pause = 1
+            if event.key == K_SPACE:
+                attack = 1
+        if event.type == KEYUP:                         #touche pas presser
+            if event.key == K_LEFT:
+                keydownl = 0
+            if event.key == K_RIGHT:
+                keydownr = 0
+            if event.key == K_UP:
+                keydownu = 0
+            if event.key == K_r:
+                ralentissement = 0
+            if event.key == K_p:
+                pause = 0
+
+
+    if ralentissement == 1:
+        pygame.time.wait(200)
+        
+    
+    if pause == 0:
+        if y_perso <= 730:
+            vit += 0.5
+        if vit >= 1:
+            jump = 0
+        og = 0
+        if x_perso >= -50 and x_perso <= 50 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 50 and x_perso <= 100 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 150 and x_perso <= 200 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 200 and x_perso <= 250 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 250 and x_perso <= 300 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 100 and x_perso <= 150 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 290 and x_perso <= 340 and y_perso >= 640 and y_perso <= 660:
+                vit, jump, y_perso, og = 0, 1, 640, 1
+        elif x_perso >= 350 and x_perso <= 390 and y_perso >= 690 and y_perso <= 710:
+                vit, jump, y_perso, og = 0, 1, 690, 1
+        elif x_perso >= 400 and x_perso <= 450 and y_perso >= 690 and y_perso <= 710:
+                vit, jump, y_perso, og = 0, 1, 690, 1
+        elif x_perso >= 450 and x_perso <= 500 and y_perso >= 690 and y_perso <= 710:
+                vit, jump, y_perso, og = 0, 1, 690, 1
+        elif x_perso >= 500 and x_perso <= 550 and y_perso >= 690 and y_perso <= 710:
+                vit, jump, y_perso, og = 0, 1, 690, 1
+        elif x_perso >= 550 and x_perso <= 600 and y_perso >= 690 and y_perso <= 710:
+                vit, jump, y_perso, og = 0, 1, 690, 1
+        elif x_perso >= 600 and x_perso <= 650 and y_perso >= 640 and y_perso <= 660:
+                vit, jump, y_perso, og = 0, 1, 640, 1
+        elif x_perso >= 650 and x_perso <= 700 and y_perso >= 640 and y_perso <= 660:
+                vit, jump, y_perso, og = 0, 1, 640, 1
+        elif x_perso >= 700 and x_perso <= 750 and y_perso >= 640 and y_perso <= 660:
+                vit, jump, y_perso, og = 0, 1, 640, 1
+        elif x_perso >= 750 and x_perso <= 800 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 800 and x_perso <= 950 and y_perso >= 490 and y_perso <= 510:
+                vit, jump, y_perso, og = 0, 1, 490, 1
+        elif x_perso >= 950 and x_perso <= 1000 and y_perso >= 640 and y_perso <= 660:
+                vit, jump, y_perso, og = 0, 1, 640, 1
+        elif x_perso >= 1000 and x_perso <= 1050 and y_perso >= 590 and y_perso <= 610:
+                vit, jump, y_perso, og = 0, 1, 590, 1
+        elif x_perso >= 1050 and x_perso <= 1250 and y_perso >= 540 and y_perso <= 560:
+                vit, jump, y_perso, og = 0, 1, 540, 1
+        elif x_perso >= 1250 and x_perso <= 1300 and y_perso >= 490 and y_perso <= 510:
+                vit, jump, y_perso, og = 0, 1, 490, 1
+        elif x_perso >= 1300 and x_perso <= 1500 and y_perso >= 440 and y_perso <= 460:
+                vit, jump, y_perso, og = 0, 1, 440, 1
+        elif x_perso >= 1500 and x_perso <= 1650 and y_perso >= 490 and y_perso <= 510:
+                vit, jump, y_perso, og = 0, 1, 490, 1
+        elif x_perso >= 1650 and x_perso <= 1700 and y_perso >= 540 and y_perso <= 560:
+                vit, jump, y_perso, og = 0, 1, 540, 1
+        elif x_perso >= 1700 and x_perso <= 2000 and y_perso >= 490 and y_perso <= 510:
+                vit, jump, y_perso, og = 0, 1, 490, 1
+
+        if keydownu == 1:
+            if y_perso >= 727 or jump == 1:
+                oui = 1
+        if oui == 1:                                        #résistance
+            ui = 1
+            if i < 20:
+                y_perso -= 10
+                i += 1
+            if i >= 20:
+                i = 0
+                oui = 0
+            jump = 0
+
+        if direction == -1:
+            perso = pygame.image.load("herosheadg.png").convert_alpha()
+            if og == 0:
+                perso = pygame.image.load("herosheadjg.png").convert_alpha()
+        if direction == 1:
+            perso = pygame.image.load("heroshead.png").convert_alpha()
+            if og == 0:
+                perso = pygame.image.load("herosheadj.png").convert_alpha()
+
+        if x_perso >= -20 and x_perso <= 0 and y_perso >= 0 and y_perso <= 1000:
+            keydownl = 0
+        elif y_perso >= 610 and y_perso <= 660 and x_perso >= 280 and x_perso <= 300:
+            keydownl = 0
+        elif y_perso >= 660 and y_perso <= 710 and x_perso >= 330 and x_perso <= 350:
+            keydownl = 0
+        elif y_perso >= 660 and y_perso <= 710 and x_perso >= 580 and x_perso <= 600:
+            keydownr = 0
+        elif y_perso >= 610 and y_perso <= 660 and x_perso >= 730 and x_perso <= 750:
+            keydownr = 0
+        elif y_perso >= 550 and y_perso <= 650 and x_perso >= 780 and x_perso <= 800:
+            keydownr = 0
+        elif y_perso >= 510 and y_perso <= 660 and x_perso >= 930 and x_perso <= 950:
+            keydownl = 0
+        elif y_perso >= 610 and y_perso <= 660 and x_perso >= 980 and x_perso <= 1000:
+            keydownr = 0
+        elif y_perso >= 560 and y_perso <= 610 and x_perso >= 1030 and x_perso <= 1050:
+            keydownr = 0
+        elif y_perso >= 510 and y_perso <= 560 and x_perso >= 1230 and x_perso <= 1250:
+            keydownr = 0
+        elif y_perso >= 460 and y_perso <= 510 and x_perso >= 1280 and x_perso <= 1300:
+            keydownr = 0
+        elif y_perso >= 460 and y_perso <= 510 and x_perso >= 1480 and x_perso <= 1500:
+            keydownl = 0
+
+
+        if oui == 0:                                        #gravité
+            if y_perso < 752:
+                    y_perso += vit
+            elif y_perso >= 752:
+                    y_perso = 752
+                    vit = 0
+
+        #attaque
+        if attack == 1:
+            if direction == -1:
+                perso = pygame.image.load("herosheadag.png").convert_alpha()
+                if x_perso >= 850 and x_perso <= 970 and y_perso >= 400 and y_perso <= 500:
+                    envie = 0
+            if direction == 1:
+                perso = pygame.image.load("herosheada.png").convert_alpha()
+                if x_perso >= 750 and x_perso <= 900 and y_perso >= 400 and y_perso <= 500:
+                    envie = 0
+            tma += 1
+            if tma >= 5:
+                attack = 0
+                tma = 0
+
+
+        #Paysans#
+        if envie == 1:
+            if x_paysan1 > 780 and x_paysan1 <= 830 and x_paysan1 > x_perso:
+                x_paysan1 -= 1
+                paysan = pygame.image.load("paysan.png")
+            elif x_paysan1 >= 780 and x_paysan1 < 830 and x_paysan1 < x_perso:
+                x_paysan1 += 1
+                paysan = pygame.image.load("paysan1.png")
+            if x_paysan1 <= 780:
+                x_paysan1 = 780
+            elif x_paysan1 >= 830:
+                x_paysan1 = 830
+            if x_perso >= 800 and x_perso < 850:
+                kickg = 1
+                vie -= 1
+            elif x_perso >= 850 and x_perso <= 900:
+                kickd = 1
+                vie -= 1
+
+
+            
+                
+
+            if kickg == 1 and ct <= 20:
+                x_perso -= 10
+                keydownr, keydownl = 0, 0
+                ct += 1
+            elif kickd == 1 and ct <= 20:
+                x_perso += 10
+                keydownr, keydownl = 0, 0
+                ct += 1
+            elif ct > 20:
+                ct = 0
+                kickg, kickd = 0, 0
+
+        x_perso -= 20
+        if keydownl == 1:                                   #propriété par touche
+            x_perso -= 10
+        if keydownr == 1:
+            x_perso += 10
+
+        #codes   
+        if entree == 1:
+            x_perso = int(input("x:"))
+            y_perso = int(input("y:"))
+            entree = 0
+        if entree == 2:
+            envie = 0
+
+        
+
+
+            
+        time.sleep(0.005)       
+        fenetre.blit(perso, (x_perso, y_perso-80))
+        if envie == 1:
+            fenetre.blit(paysan, (x_paysan1, y_paysan1))
+        if vie >= 1:
+            fenetre.blit(bvp, (900, 300))
+        if vie >= 2:
+            fenetre.blit(bvp, (910, 300))
+        if vie >= 3:
+            fenetre.blit(bvp, (920, 300))
+        if vie >= 4:
+            fenetre.blit(bvp, (930, 300))
+        if vie == 5:
+            fenetre.blit(bvp, (940, 300))
+        
+        coordtest(font, x_perso, y_perso, fenetre)          #mise à jour en fonction des propriétés
+        fenetre.blit(texte2, (200,200))
+        fenetre.blit(texteui, (200,250))
+        coordsouris(font, fenetre)                          #information souris
+        pygame.display.flip()                               #boucle
+
+        if vie == 0:
+            fenetre.blit(perdu, (0, 0))
+            pygame.display.flip()
+            time.sleep(10)
+            continuer = 0
+       
+
