@@ -25,8 +25,8 @@ Apprentissage Javascript, C# et SQL
 
 ### COMPETENCES
 
-Langage maîtrisé : [C++](https://git.unistra.fr/ethan.fuchs/all-code/-/tree/main/SuperSoft), [C](https://github.com/redragon57/Zimproov/blob/main/test%20docking.mp4), C#, [HTML, CSS, JavaScript](), [GDScript](https://git.unistra.fr/ethan.fuchs/all-code/-/tree/main/SuperSoft/Projet_Godot), [Java](), Python, Assembleur, SQL, PHP
-Logiciel maîtrisé : Suite LibreOffice, Visual Studio, IntelliJ, Scratch, [Godot](https://git.unistra.fr/ethan.fuchs/all-code/-/tree/main/SuperSoft/Projet_Godot), Unity, [Cinema 4d](https://raw.githubusercontent.com/redragon57/Zimproov/main/My%20modelisation%20work%20presentation.mp4), Jsplacement, Photofiltre, Audacity, Shotcut
+Langage maîtrisé : [C++](https://git.unistra.fr/ethan.fuchs/all-code/-/tree/main/SuperSoft), [C](https://raw.githubusercontent.com/redragon57/Zimproov/main/test%20docking.mp4), [C#](./C#_Work), [HTML, CSS, JavaScript](./WebReact_Work), [GDScript](./Projet_Godot), [Java](./Java_Work), Python, Assembleur, SQL, PHP
+Logiciel maîtrisé : Suite LibreOffice, Visual Studio, IntelliJ, Scratch, [Godot](./Projet_Godot), Unity, [Cinema 4d](https://raw.githubusercontent.com/redragon57/Zimproov/main/My%20modelisation%20work%20presentation.mp4), Jsplacement, Photofiltre, Audacity, Shotcut
 Langue : Anglais
 
 ### HOBBIES
